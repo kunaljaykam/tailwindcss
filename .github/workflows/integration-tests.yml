@@ -39,8 +39,8 @@ jobs:
       - name: Build Tailwind CSS
         run: npm run prepublishOnly
 
-      - name: Install dependencies of each integration
-        run: npm run install:integrations
+      - name: Install dependencies for tailwindcss-cli
+        run: npm install --prefix ./integrations/tailwindcss-cli
 
-      - name: Test all integrations
-        run: npm run test:integrations
+      - name: Run tailwindcss-cli tests
+        run: npm test --prefix ./integrations/tailwindcss-cli
