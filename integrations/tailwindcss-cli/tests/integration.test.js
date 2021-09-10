@@ -26,7 +26,7 @@ describe.only('static build', () => {
     )
   })
 
-  it('should safelist a list of classes to always include', async () => {
+  it.only('should safelist a list of classes to always include', async () => {
     await writeInputFile('index.html', html`<div class="font-bold"></div>`)
     await writeInputFile(
       '../tailwind.config.js',
