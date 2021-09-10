@@ -75,6 +75,9 @@ module.exports = function $(command, options = {}) {
     })
 
     child.on('close', (code, signal) => {
+      console.log('--- OUTPUT')
+      console.log(combined.toString())
+      console.log('--- OUTPUT')
       ;(signal === 'SIGTERM' ? resolve : code === 0 ? resolve : reject)({
         code,
         stdout,
