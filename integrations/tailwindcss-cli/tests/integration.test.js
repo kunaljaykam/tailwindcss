@@ -10,7 +10,7 @@ let {
 } = require('../../io')({ output: 'dist', input: 'src' })
 
 describe.only('static build', () => {
-  it.only('should be possible to generate tailwind output', async () => {
+  it('should be possible to generate tailwind output', async () => {
     await writeInputFile('index.html', html`<div class="font-bold"></div>`)
 
     await $('node ../../lib/cli.js -i ./src/index.css -o ./dist/main.css', {
